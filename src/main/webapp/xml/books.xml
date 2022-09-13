@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>홍길동전</name>
+		<author>홍길동</author>
+	</book>
+	<book>
+		<name>이순신전</name>
+		<author>이순신</author>
+	</book>
+</books>

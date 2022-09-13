@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){				//$은 jQuery. 을 나타냄 
+		$("#xmlPara").load("/WEBTest/xml/books.xml" ,
+				function(data,status){
+					carry(data);
+					alert(data);
+					alert(status);
+		});
+		alert($("#xmlPara")[0].val());
+		alert("asd");
+	});
+	
+	alert($("#xmlPara")[0].val());
+	function carry(xml){
+		let num, name;
+		let xmlDoc;
+	
+		
+		xmlDoc = xml.responseXML; 
+		
+		author = xmlDoc.getElementsByTagName("author");
+		name = xmlDoc.getElementsByTagName("name");
+		document.getElementById("xname1").innerHTML = name[0].childNodes[0].nodeValue;
+		document.getElementById("xname2").innerHTML = name[1].childNodes[0].nodeValue;
+		document.getElementById("xauthor1").innerHTML = author[0].childNodes[0].nodeValue;
+		document.getElementById("xauthor2").innerHTML = author[1].childNodes[0].nodeValue;
+	}
+	
+	
+</script>
+</head>
+<body>
+	<div>
+		<p id="xmlPara" >
+			책1<br />
+			제목 : <span id=xname1></span><br />
+			저자 : <span id=xauthor1></span><br />
+			책2<br />
+			제목 : <span id=xname2></span><br />
+			저자 : <span id=xauthor2></span><br />
+		</p>
+		<p id="jsonPara">
+			책1<br />
+			제목 : <span></span><br />
+			저자 : <span></span><br />
+			책2<br />
+			제목 : <span></span><br />
+			저자 : <span></span><br />
+		</p>
+	</div>
+	<!-- <div>
+		<p>hello html!</p>
+		<p>
+			<img src="/WEBTest/images/다운로드.jpg" />
+			<img src="../images/다운로드.jpg" />
+		</p>
+	</div>
+	 -->
+
+</body>
+</html>

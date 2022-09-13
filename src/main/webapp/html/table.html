@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/WEBTest/css/table.css" />
+<script src="/WEBTest/js/scoreData.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<table id ="mytable">
+			<caption>학점현황</caption>
+			<colgroup>
+				<col width="100" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>학번</th>
+					<th>영어</th>
+					<th>수학</th>
+					<th>총점</th>
+					<th>평균</th>
+					<th>석차</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th id="hak0"></th>
+					<td id="eng0"></td>
+					<td id="math0"></td>
+					<td id="tal0"></td>
+					<td id="avg0"></td>
+					<td id="grade0"></td>
+				</tr>
+				<tr>
+					<th id="hak1"></th>
+					<td id="eng1"></td>
+					<td id="math1"></td>
+					<td id="tal1"></td>
+					<td id="avg1"></td>
+					<td id="grade1"></td>
+				</tr>
+				<tr>
+					<th id="hak2"></th>
+					<td id="eng2"></td>
+					<td id="math2"></td>
+					<td id="tal2"></td>
+					<td id="avg2"></td>
+					<td id="grade2"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>과목총점</th>
+					<td id="total0"></td>
+					<td id="total1"></td>
+					<td class="empty" colspan="3"></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div>
+		<div>
+			<button onclick ="processJSCSV();">JS-CSV</button>
+			<button onclick ="processJSJSON();">JS-JSON</button>
+			<button onclick ="processJSXML();">JS-XML</button>
+			<button onclick ="processJQueryCSV();">JQuery-CSV</button>
+			<button onclick ="processJQueryJSON()">JQuery-JSON</button>
+			<button onclick ="processJQueryXML();">JQuery-XML</button>
+			<button onclick ="processINIT();"">INIT</button>
+		</div>
+	</div>
+</body>
+</html>

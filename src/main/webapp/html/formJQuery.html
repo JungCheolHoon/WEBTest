@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>form 엘리먼트 연습</title>
+<style>
+input, button {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="radio"], input[type="reset"], input[type="submit"] {
+	display: inline;
+}
+</style>
+<script>
+		$(function() {
+			alert("");
+		});
+		$("#formSubmit").click(function(){
+			alert("");
+			var a = $("input[type='checkbox']:checked").val();
+			
+			$.get("../jsp/test.jsp?txt1=" + a, function(data) {
+				alert(data);
+			})
+		})
+		/*$("#formSubmit").click(function(){
+			if($("input[name='txt1']").val()==""){
+				alert("첫번째 텍스트상자에 텍스트를 입력해주세요!");
+				return false;
+			}*/
+		/*if($("input[type='checkbox']:checked").val()!="on"){
+			//alert($("input[type='checkbox']:checked").val());
+			
+			alert(document.getElementById('ipbox').checked);
+			alert("체크박스를 선택해주세요!");
+			return false;
+		}*/ 
+		/*else if(!$("input[name='rd1']:checked").val()){				//라디오나 체크박스는 checked를 사용함
+			alert("라디오를 선택해주세요!");
+			return false;
+		}
+		else if(!$("textarea[name='ta1']").val()){						//textarea는 check를 쓰지않음
+			alert("글상자에 텍스트를 입력해주세요!")
+			return false;
+		}
+		else{
+			$("form[name='userData']").submit();	//jQuery를 안쓰면 Document부터 배열로 접근하여야 하나 jQuery를 쓰면 특정엘리먼트에 바로 접근가능
+		}*/
+	//})
+</script>
+</head>
+<body>
+	<form name="userData" action="../jsp/formProc.jsp">
+		<input type="text" id=txt1 name="txt1" /> 
+		<input type="password" name="pwd1" /> 
+		<input type="button" value="버튼1" /> 
+		<input type="checkbox" name="cb1" id="ipbox" /> 
+		<input type="radio" name="rd1" value="0" /> 
+		<input type="radio" name="rd1" value="1" /><br />
+		<textarea name="ta1"></textarea>
+		<button id="formSubmit">버튼2</button>
+		<hr />
+		<input type="reset" value="취소" />&nbsp;
+		<button>전송</button>
+
+	</form>
+</body>
+</html>
